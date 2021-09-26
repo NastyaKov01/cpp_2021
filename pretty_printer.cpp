@@ -6,14 +6,6 @@
 #include <utility>
 #include <tuple>
 
-template<typename T>
-std::string form_str(T val)
-{
-    std::stringstream ss;
-    ss << val;
-    return ss.str();
-}
-
 struct Printer {
     std::stringstream pr_ss;
     Printer() {};
@@ -26,7 +18,7 @@ struct Printer {
     template<typename T>
     Printer& format(T val)
     {
-        pr_ss << form_str(val);
+        pr_ss << val;
         return *this;
     }
 
